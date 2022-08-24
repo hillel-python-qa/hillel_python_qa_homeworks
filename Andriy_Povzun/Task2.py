@@ -9,3 +9,4 @@ alcohol_blacklist = ['Mike Tyson', 'Conor McGregor', 'Tyson Fury',
 
 all_blacklist = list(set(casino_blacklist) & set(poker_blacklist) & set(alcohol_blacklist))
 print(f'This humans in all blacklists: {all_blacklist}')
+
