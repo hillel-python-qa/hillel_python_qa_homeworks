@@ -1,8 +1,6 @@
 omnivores_guests = ['John', 'Lui', 'Andy', 'Sandy', 'Cler', 'Tanya',
                     'Fitch', 'Artur', 'Susan', 'Killian']
-vegetarians_guests = ['John', 'Lui', 'Andy', 'Sandy', 'Cler', 'Tanya',
-                      'Fitch', 'Artur', 'Susan', 'Killian', 'Yulia',
-                      'Steve', 'Gleb', 'Alex']
-only_vegetarians = list(set(vegetarians_guests) - set(omnivores_guests))
-print(f'This people eat only vegetarians food: {only_vegetarians}')
+vegetarians_guests = ['Yulia', 'Steve', 'Gleb', 'Alex']
+can_eat_vegetarians_food = omnivores_guests + vegetarians_guests
+print(f'This people can eat vegetarians food: {can_eat_vegetarians_food}')
 
