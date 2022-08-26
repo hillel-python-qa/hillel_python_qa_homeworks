@@ -8,3 +8,4 @@ for friend in friends:
         print(f'We with {friend} are not the friends anymore')
     else:
         print(f'We with {friend} best friends')
+
