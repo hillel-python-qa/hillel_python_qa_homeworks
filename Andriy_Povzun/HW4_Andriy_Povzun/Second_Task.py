@@ -9,3 +9,4 @@ first_way_devide = 2
 first_way_devide /= number
 
 second_way_devide = number / 2
+
