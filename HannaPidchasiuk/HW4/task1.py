@@ -5,18 +5,15 @@
 # accordingly, elements with an even index are placed in another list of tuples
 # with the same format as in the case with odd indices.
 
-def create_tuple_pair(arg1, arg2):
-    return arg1, arg2
-
-
 if __name__ == "__main__":
     my_arr = [1, 2, 3, 4, 5, 6, 7, 8]
     even_arr, odd_arr = [], []
     for index, element in enumerate(my_arr):
         if index % 2 == 0:
-            even_arr.append(create_tuple_pair(index, element))
+            even_arr.append((index, element))
         else:
-            odd_arr.append(create_tuple_pair(index, element))
+            odd_arr.append((index, element))
 
     print(f'Even pairs {even_arr}\n'
           f'Odd pairs {odd_arr}')
+
