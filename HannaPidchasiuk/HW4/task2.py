@@ -8,3 +8,4 @@ if __name__ == "__main__":
     print(f'multiply 2 by 2: {a << 1}')
     print(f'division 2 by 2: {a / 2}')
     print(f'division 2 by 2: {a >> 1}')
+
