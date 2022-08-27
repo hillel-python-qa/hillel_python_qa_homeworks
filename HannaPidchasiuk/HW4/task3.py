@@ -15,3 +15,4 @@ if __name__ == "__main__":
             continue
         else:
             print(f'{friend} we are the best friends')
+
