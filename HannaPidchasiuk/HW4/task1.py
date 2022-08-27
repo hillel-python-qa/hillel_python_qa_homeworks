@@ -17,4 +17,3 @@ if __name__ == "__main__":
     print(f'Even pairs {even_arr}\n'
           f'Odd pairs {odd_arr}')
 
-
