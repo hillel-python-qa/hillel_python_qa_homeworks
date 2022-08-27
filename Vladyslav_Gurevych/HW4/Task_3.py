@@ -15,3 +15,4 @@ for friend in friends:
         continue
     else:
         print(f"{friend} we are the best friends")
+

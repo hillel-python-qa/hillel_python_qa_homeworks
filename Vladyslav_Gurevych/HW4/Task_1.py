@@ -13,3 +13,4 @@ for index, element in enumerate(arr):
 
 print(even_list)
 print(odd_list)
+

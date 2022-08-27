@@ -7,3 +7,4 @@ print(f'multiply classic: {digit * 2}')
 print(f'multiply by bite operator << : {digit << 1}')
 print(f'division classic: {digit / 2}')
 print(f'division by bite operator >> : {digit >> 1}')
+
