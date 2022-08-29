@@ -8,3 +8,4 @@ for index, number in enumerate(list_of_elements):
         even_numbers.append((index, number))
 print(f"Odd numbers are: {odd_numbers}")
 print(f"Even numbers are: {even_numbers}")
+
