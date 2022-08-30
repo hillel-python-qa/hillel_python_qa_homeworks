@@ -4,3 +4,8 @@
 # in the first line, display the headings Names where the word names should be in the middle,
 # and the rest of the space is filled with the symbol "*"
 
+if __name__=="__main__":
+    friends = ["John", "Marta", "James", "Amanda", "Marianna"]
+    print(" Names ".center(20, "*"))
+    for friend in friends:
+        print(f'{friend:>12}')
