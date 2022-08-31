@@ -27,6 +27,3 @@ for i in range(len(part1)):
     snake_format.append(part1[i] + "_" + part2[i])
 
 print(snake_format)
-
-
-
