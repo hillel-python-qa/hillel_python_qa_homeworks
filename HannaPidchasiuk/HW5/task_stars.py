@@ -1,21 +1,60 @@
 import re
 
+
+def find_name(arr_names, arr_compare):
+    result = []
+    for name in arr_names:
+        if name.lower().strip() in arr_compare:
+            result.append(name.strip())
+    return result
+
+
+def crop_ids(arr):
+    result = []
+    for i in arr:
+        result.append(i.replace("id=\"", "").replace("\"", ""))
+    return result
+
+
+def crop_href(arr):
+    result = []
+    for href in arr:
+        result.append(href.replace("href=\"", "").replace("\"", ""))
+    return result
+
+
+def find_domain(arr):
+    result = []
+    for i in arr:
+        if i.startswith("www."):
+            result.append(i.replace("www.", ""))
+        elif re.search(r"/.*[a-zA-Z]", i):
+            result.append(re.sub(r"/.*[a-zA-Z]", "", i))
+        else:
+            result.append(i)
+    return result
+
+
 if __name__ == "__main__":
-    temp = ''
-    find_id = re.findall(r"id=\"[a-z]+\"", temp)
-    find_href = re.findall(r"href=\".*\"", temp)
-    find_name = re.findall(r"", temp)
-    find_domain = re.findall(r"", temp)
-#\B\".*.com
-#(([A-Za-z0-9]+)\.).*[a-z]
+    temp = open("index.html", "r").read()
+
+    find_id = crop_ids(re.findall(r"id=\"[a-z]+\"", temp))
+    find_names = find_name(re.findall(r"\.*[a-zA-Z0-9]{2,20}\.*[a-zA-Z0-9]{2,20}\s", temp), find_id)
+    find_links = crop_href(re.findall(r"href=\".*\"", temp))
+    find_domains = find_domain(re.findall(r"[a-zA-Z0-9]{2,20}\..*[a-zA-Z0-9]{2,20}", temp))
+
     result_1 = []
     result_2 = []
-    for id_i, href, name, domain in find_id, find_href, find_name, find_domain:
+    for element in range(len(find_id)):
         result_1.append((
-            id_i.replace("id=\"", "").replace("\"", ""),
-            href.replace("href=\"", "").replace("\"", ""),
-            name))
+            find_id[element],
+            find_links[element],
+            find_names[element]
+        ))
         result_2.append((
-            id_i.replace("id=\"", "").replace("\"", ""),
-            domain,
-            name))
+            find_id[element],
+            find_domains[element],
+            find_names[element]
+        ))
+    print(result_1)
+    print(result_2)
