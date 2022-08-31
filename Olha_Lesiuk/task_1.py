@@ -1,15 +1,9 @@
 list_of_elements = [1, 2, 3, 4, 5, 6, 7, 8]
-Oddlist = []
-EvenList = []
+odd_list = []
+even_list = []
 
-for i in list_of_elements:
-    if i%2 == 0:
-        EvenList.append(i)
+for count, number in enumerate(list_of_elements):
+    if number % 2 == 0:
+        print("Even numbers:", count, number)
     else:
-        Oddlist.append(i)
-
-EvenList = list(enumerate(EvenList))
-Oddlist = list(enumerate(Oddlist))
-
-print("Even numbers", EvenList)
-print("Odd numbers", Oddlist)
+        print("Odd numbers:", count, number)
