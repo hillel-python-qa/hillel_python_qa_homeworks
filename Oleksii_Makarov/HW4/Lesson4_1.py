@@ -9,3 +9,4 @@ for index, digit in enumerate(numbers):
         even_index.append((index, digit))
 
 print(f'Odd index: {odd_index}\nEven index: {even_index}')
+
