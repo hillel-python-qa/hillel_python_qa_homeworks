@@ -7,3 +7,4 @@ for index in range(len(numbers)):
     else:
         even_index.append((index, numbers[index]))
 print(f'Odd index: {odd_index}\nEven index: {even_index}')
+

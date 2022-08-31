@@ -8,3 +8,4 @@ for person in friends:
         continue
     else:
         print(f"{person} we are the best friends")
+
