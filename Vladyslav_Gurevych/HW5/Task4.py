@@ -6,12 +6,11 @@ snake_format = []
 part1 = []
 part2 = []
 str_camel_case = "".join(camel_case)
-upper_case = str_camel_case.upper()
 temple = ""
-sss = "abcdefghijklmnopqrstuvwxyz"
+alphabet = "abcdefghijklmnopqrstuvwxyz"
 
 for i in str_camel_case:
-    if i in sss:
+    if i in alphabet:
         temple += i
     else:
         temple += " " + i

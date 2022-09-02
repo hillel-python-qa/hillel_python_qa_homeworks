@@ -9,4 +9,4 @@ name = "Names"
 print(f'{name.center(25, "*")}')
 
 for name in list_of_friends:
-      print(f'{name:>25}')
+    print(f'{name:>25}')
