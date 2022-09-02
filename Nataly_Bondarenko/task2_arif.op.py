@@ -1,11 +1,9 @@
 num = 2
 
+# Multiply
 print(num * 2)
+print(num << 1)
 
-num *= 2
-print(num)
-
+# Divide
 print(num / 2)
-
-num /= 2
-print(num)
+print(num >> 1)
