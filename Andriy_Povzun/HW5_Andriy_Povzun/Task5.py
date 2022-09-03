@@ -1,7 +1,7 @@
 import re
 
-f = open('text')
-string = f.read()
+with open('text', 'r') as file:
+    string = file.read()
 update_string = re.sub(r'\.{2,}', '.', string)
 update_string = re.sub(r'\b[A-Za-z]+ [A-Za-z]+\.[A-Za-z]+\.', 'The Hubble Space ', update_string)
 update_string = re.sub(r'\.[A-Z]', '. A', update_string)
