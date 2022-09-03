@@ -34,13 +34,12 @@ for i in range(100):
     else:
         operation.append(3)
 
-for i in range(len(operation)):
-    line.append(f'{first_operand[i]} {second_operand[i]} {operation[i]}')
-
-result = tuple(line)
+for i in range(len(first_operand)):
+    cell = tuple((first_operand[i], second_operand[i], operation[i]))
+    line.append(cell)
 
 os.makedirs('test/data')
 
 with open("test/data/result.txt", 'w') as file:
-    for line in result:
-        file.write(f'{line}\n')
+    for item in line:
+        file.write(f'{item[0]} {item[1]} {item[2]}\n')

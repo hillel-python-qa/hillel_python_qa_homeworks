@@ -35,13 +35,12 @@ for i in range(100):
     else:
         operation.append(3)
 
-for i in range(len(operation)):
-    line.append(f'{first_operand[i]} {second_operand[i]} {operation[i]}')
-
-result = tuple(line)
+for i in range(len(first_operand)):
+    cell = tuple((first_operand[i], second_operand[i], operation[i]))
+    line.append(cell)
 
 os.makedirs('test/data')
 
 with open("test/data/result.txt", 'w+b') as file:
-    text = pickle.dumps(result)
+    text = pickle.dumps(line)
     file.write(text)
