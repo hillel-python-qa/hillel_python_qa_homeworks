@@ -22,5 +22,7 @@ text_sub = re.sub(r'[_]', " ", text_sub)
 # split text by '\n'
 text_split = re.split('\n', text_sub)
 
+# print(text_split)
+
 for line in text_split:
     print(line)
