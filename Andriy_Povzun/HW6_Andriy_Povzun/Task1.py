@@ -30,5 +30,3 @@ with open('test/data/list.txt', 'wb') as file:
     byte_list = pickle.dumps(my_list)
     file.write(byte_list)
 
-# for i in range(len(my_list)):
-#     file.write(pickle.dumps(my_list[i][0], my_list[i][1], my_list[i][2]))
