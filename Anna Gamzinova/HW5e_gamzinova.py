@@ -11,8 +11,14 @@ text = "The Hubble.Space.Telescope (often referred to as HST or Hubble) is a spa
        "arisen. The Allen Commission found that a reflective null corrector, a testing device used to achieve a " \
        "properly shaped non-spherical mirror, had been incorrectly assembled—one lens was out of position by 1.3 mm (" \
        "0.051 in). "
+# find all names without space separation ans replace dot with underscore
+text_sub = re.sub(r'\.(\w*)\.', r'_\g<1>_', text)
+# replace all two underscores with two dots
+text_sub = re.sub(r'[_]{2}', r'..', text_sub)
 # substitute the text by all non numeric '\.\s' to '.\n'
-text_sub = re.sub(r'(\D)(\.+\s*)', r'\g<1>.\n', text)
+text_sub = re.sub(r'(\D)(\.+\s*)', r'\g<1>.\n', text_sub)
+# substitute any underscore with a space
+text_sub = re.sub(r'[_]', " ", text_sub)
 # split text by '\n'
 text_split = re.split('\n', text_sub)
 
