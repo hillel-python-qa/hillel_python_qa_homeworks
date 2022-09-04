@@ -1,19 +1,19 @@
-def isEven(number):
+def is_even(number):
     if number % 2 == 0:
         return True
     else:
         return False
 
 
-values = [1, 2, 3, 4, 5, 6, 7, 8]
+values = [1, 2, 3, 4, 5, 6, 7, 8, 1, 2]
 odd = []
 even = []
 
-for element in list:
-    if isEven(element):
-        even.append((list.index(element), element))
+for i in range(0, len(values)):
+    if is_even(values[i]):
+        even.append((i, values[i]))
     else:
-        odd.append((list.index(element), element))
+        odd.append((i, values[i]))
 
 print(even)
 print(odd)
