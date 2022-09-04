@@ -1,5 +1,6 @@
 import os
 import random
+import pickle
 
 my_list = []
 left_operand = 1
@@ -25,6 +26,9 @@ for i in range(100):
 
 os.makedirs('test/data')
 
-with open('test/data/list.txt', 'w') as result:
-    for i in range(len(my_list)):
-        result.write(f'{my_list[i][0]} {my_list[i][1]} {my_list[i][2]}\n')
+with open('test/data/list.txt', 'wb') as file:
+    byte_list = pickle.dumps(my_list)
+    file.write(byte_list)
+
+# for i in range(len(my_list)):
+#     file.write(pickle.dumps(my_list[i][0], my_list[i][1], my_list[i][2]))
