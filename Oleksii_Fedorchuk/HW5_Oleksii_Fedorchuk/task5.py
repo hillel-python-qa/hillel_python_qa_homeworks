@@ -11,5 +11,6 @@ if __name__ == "__main__":
            "how the error could have arisen. The Allen Commission found that a reflective null corrector, " \
            "a testing device used to achieve a properly shaped non-spherical mirror, had been incorrectly " \
            "assembled—one lens was out of position by 1.3 mm (0.051 in). "
-    for item in re.split(r"[.?!]\s", text):
+    rec = re.sub("The Hubble.Space.Telescope", "The Hubble. Space. Telescope", text)
+    for item in re.split(r'[.?!]\s', rec):
         print(item)
