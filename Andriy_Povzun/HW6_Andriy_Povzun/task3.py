@@ -1,7 +1,6 @@
 import re
 import string
 
-
 with open('text.txt', 'r') as file:
     text = file.read()
 upper_alphabet = string.ascii_uppercase
