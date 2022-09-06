@@ -11,7 +11,7 @@ with open(os.path.join(path, file), 'r') as fp:
 
 # calculate mathematical operations using list
 for line in list_lines:
-
+    # a is left number, b is right number and c is operator
     line_split = line.split(" ")
     a = int(line_split[0])
     b = int(line_split[1])
