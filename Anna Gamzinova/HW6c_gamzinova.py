@@ -7,6 +7,6 @@ with open("text.txt", "r") as file:
 # all the special symbols and digits removed
 text_updated = re.sub(r'\W|\d', r'', text)
 
-for letter in set(text_updated):
+for letter in sorted(set(text_updated)):
     print(f'{letter}: {text_updated.count(letter)}')
 
