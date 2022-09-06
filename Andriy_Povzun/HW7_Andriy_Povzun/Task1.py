@@ -1,4 +1,4 @@
-def calculator(first_operand, second_operand, action):
+def calculator(first_operand: int, second_operand: int, action: str):
     if action == "+":
         result = first_operand + second_operand
         return result
