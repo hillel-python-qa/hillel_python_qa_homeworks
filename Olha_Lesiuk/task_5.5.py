@@ -16,5 +16,5 @@ if __name__ == '__main__':
                 "a testing device used to achieve a properly shaped non-spherical mirror,"\
                 "had been incorrectly assembled—one lens was out of position by 1.3 mm (0.051 in)."
 
-    for text in re.split(r'[.?!][\'")\]]* *', text_about_space):
+    for text in re.split(r'[.?!]\s', text_about_space):
         print(text)
