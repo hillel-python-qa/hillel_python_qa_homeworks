@@ -1,4 +1,36 @@
-def arithmetic(): ...
+# First variant of my function before running test,
+# the only that fails in this case is arithmetic.__code__.co_varnames (because "actions" were not predicted)
+#
+# def arithmetic(left_operand, right_operand, operation: str):
+#     """
+#         Apply arithmetic operation for provided left and right operands
+#     """
+#     actions = {
+#         "+": left_operand + right_operand,
+#         "-": left_operand - right_operand,
+#         "*": left_operand * right_operand,
+#         "/": left_operand / right_operand
+#     }
+#     if actions.get(operation) is None:
+#         return f'Not known operation: {operation}'
+#     else:
+#         return actions.get(operation)
+
+
+def arithmetic(left_operand, right_operand, operation: str):
+    """
+        Apply arithmetic operation for provided left and right operands
+    """
+    if operation == "+":
+        return left_operand + right_operand
+    elif operation == "-":
+        return left_operand - right_operand
+    elif operation == "*":
+        return left_operand * right_operand
+    elif operation == "/":
+        return left_operand / right_operand
+    else:
+        return f'Not known operation: {operation}'
 
 
 if __name__ == "__main__":
