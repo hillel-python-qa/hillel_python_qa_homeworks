@@ -13,7 +13,7 @@ if __name__ == '__main__':
            " was out of position by 1.3 mm (0.051 in)."
     # I have no clue how to automatically replace these two, in case we got different text. Can be done with if re.match
     text = text.replace('The Hubble.Space.Telescope', 'The Hubble Space Telescope')
-    # Replace single dots without space behind and numbers with dots with spaces
+    # Replace single dots without space and numbers after them with dots with spaces after them
     text = re.sub('(?![.]{2,})[.!?](?!\s)(?!\d)', '. ', text)
     # Creating a list of sentences with split
     result = re.split('[.!?]\s', text)
