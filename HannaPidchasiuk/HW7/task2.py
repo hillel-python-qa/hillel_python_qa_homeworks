@@ -3,7 +3,11 @@
 from math import sqrt
 
 
-def square(side) -> tuple:
+def square(side: float) -> tuple:
+    """
+        Takes side of the square, and returns a tuple of its parameters
+            (perimeter, area, diagonal)
+    """
     square_perimeter = side * 4
     square_area = pow(side, 2)
     square_diagonal = round(side * sqrt(2), 3)
