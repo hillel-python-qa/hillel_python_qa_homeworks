@@ -130,3 +130,6 @@ dmypy.json
 
 .idea/
 */.idea
+
+# files from HW6
+HannaPidchasiuk/HW6/test/data
