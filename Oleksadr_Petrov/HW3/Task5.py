@@ -1,10 +1,10 @@
-vip_guests = ["Minodora Áurea", "Itoro Alban", "Gabriella Emil", "Sigmund Govinda"]
+vip_guests = ("Minodora Áurea", "Itoro Alban", "Gabriella Emil", "Sigmund Govinda")
 common_guests = ["Ivan Ivanov", "Oleg Petrov", "Sergey Smirnov", "Egor Letov", "Vitaliy Sidorov"]
 vip_places = {
-                1: vip_guests.pop(),
-                2: vip_guests.pop(),
-                3: vip_guests.pop(),
-                4: vip_guests.pop()
+                1: vip_guests[0],
+                2: vip_guests[1],
+                3: vip_guests[2],
+                4: vip_guests[3]
              }
 common_places = {
                    1: common_guests.pop(),
