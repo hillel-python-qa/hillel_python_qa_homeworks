@@ -6,9 +6,9 @@
 # git checkout -b <HW№_Name_Surname>
 # git add <file_name>
 # git commit -m <message>
-#git push origin <branch_name> (can be different command, see info from git logs)
+# git push origin <branch_name> (can be different command, see info from git logs)
 
-#. To add another HW
+# To add another HW
 # 1. From main branch: 
 # git pull origin main
 # git checkout -b <HW№_Name_Surname>
@@ -16,4 +16,4 @@
 # git commit -m <message>
 # git push origin <branch_name> (can be different command, see info from git logs)
 
-#. PR naming: HW№_Name_Surname
+# PR naming: HW№_Name_Surname
