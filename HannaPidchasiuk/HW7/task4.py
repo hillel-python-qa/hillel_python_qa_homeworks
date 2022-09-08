@@ -3,10 +3,12 @@
 import re
 
 
-def remove_numbers(lines: list) -> list:
+def remove_numbers(file_path: str) -> list:
     """
-        Takes list of lines from file and returns list of same lines without numbers.
+        Takes file path and returns list of lines from file without numbers.
     """
+    with open(file_path, "r") as temp_file:
+        lines = temp_file.readlines()
     result = []
     for line in lines:
         result.append(re.sub(r'[0-9]', '', line))
@@ -14,9 +16,4 @@ def remove_numbers(lines: list) -> list:
 
 
 if __name__ == '__main__':
-    with open("text.txt", "r") as file:
-        lines_list = remove_numbers(file.readlines())
-
-    with open("text.txt", "w") as file:
-        file.writelines(lines_list)
-
+    print(remove_numbers("text.txt"))
