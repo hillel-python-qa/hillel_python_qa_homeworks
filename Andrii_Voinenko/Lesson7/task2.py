@@ -6,7 +6,7 @@ def square(square_side_value: float) -> tuple:
     calc_square_area = pow(square_side_value, 2)
     calc_diagonal = square_side_value * math.sqrt(2)
     result = (calc_perimeter, calc_square_area, round(calc_diagonal, 2))
-    return print(result)
+    return result
 
 
 square(15)

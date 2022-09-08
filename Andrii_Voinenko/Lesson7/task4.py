@@ -13,7 +13,7 @@ def remove_number_from_string(file_name: str):
         # Adding all chars without digits
         result = ''.join(without_digits)
 
-    return print(result)
+    return result
 
 
 remove_number_from_string("./text.txt")

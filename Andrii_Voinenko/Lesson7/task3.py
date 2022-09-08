@@ -5,7 +5,7 @@ def is_prime(number_to_check: int) -> bool:
                 return False
         return True
     else:
-        return print(f"Enter number more then 2 and less than 1000")
+        print(f"Enter number more then 2 and less than 1000")
 
 
-is_prime(100)
+is_prime(1001)
