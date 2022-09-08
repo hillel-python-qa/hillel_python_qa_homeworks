@@ -8,8 +8,7 @@ def get_square_parameters(side_of_square: float) -> tuple:
     perimeter = round(side_of_square * 4, 2)
     area = round(side_of_square ** 2)
     diagonal = round(sqrt(2) * side_of_square, 2)
-    result_tuple = (perimeter, area, diagonal)
-    return result_tuple
+    return perimeter, area, diagonal
 
 
 if __name__ == "__main__":

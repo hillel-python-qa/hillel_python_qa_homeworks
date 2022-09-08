@@ -11,6 +11,7 @@ def is_prime(digit: int) -> bool:
     for i in range(2, number):
         if number % i == 0:
             count_of_loop += 1
+            break
 
     if count_of_loop == 0:
         return True
