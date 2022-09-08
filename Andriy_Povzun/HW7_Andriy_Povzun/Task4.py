@@ -8,3 +8,8 @@ def number_remover(file_name: str):
     for row in rows:
         file_without_numbers.append(re.sub(r'\d', '', row))
     return file_without_numbers
+
+
+"""
+The function reads all lines of the file and deletes all numbers line by line
+"""
