@@ -1,5 +1,22 @@
-def arithmetic(): ...
-
+def arithmetic(left_operand: int, right_operand: int, operation: str) -> int:
+    """
+        Apply arithmetic operation for provided left and right operands
+    """
+    if operation == "+":
+        result = left_operand + right_operand
+        return result
+    elif operation == '-':
+        result = left_operand - right_operand
+        return result
+    elif operation == '*':
+        result = left_operand * right_operand
+        return result
+    elif operation == '/':
+        result = left_operand / right_operand
+        return result
+    else:
+        wrong_operation = f'Not known operation: {operation}'
+        return wrong_operation
 
 
 if __name__ == "__main__":
@@ -28,5 +45,3 @@ if __name__ == "__main__":
         arithmetic(1, right_operand=2, operation="+")
     except TypeError as e:
         assert e.__class__ is TypeError
-
-
