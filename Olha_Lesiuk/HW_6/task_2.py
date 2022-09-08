@@ -3,15 +3,16 @@ if __name__ == '__main__':
         elements = file.readlines()
 
 output_of_results = []
+for element in elements:
+    output_of_results.append(element.replace("\n", "").split(" "))
 
 for i in range(len(elements)):
-    if elements[i][2] == "1":
+    if elements[i][2] == 1:
         print(int(elements[i][0]) + int(elements[i][1]))
-    elif elements[2] == "2":
+    elif elements[i][2] == 2:
         print(int(elements[i][0]) - int(elements[i][1]))
-    elif elements[2] == "3":
+    elif elements[i][2] == 3:
         print(int(elements[i][0]) * int(elements[i][1]))
-    else:
-        print(int(elements[i][0]) / int(elements[i][1]))
+
 
 print(output_of_results)
