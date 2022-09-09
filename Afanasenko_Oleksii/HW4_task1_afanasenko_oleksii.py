@@ -8,6 +8,3 @@ for index, number in enumerate(numbers):
         list_2.append((index, number))
 print(list_1)
 print(list_2)
-
-
-

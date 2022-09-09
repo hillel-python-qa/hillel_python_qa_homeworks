@@ -6,5 +6,3 @@ for number in list_1:
 print(result_1)
 a = 2 << 1
 print(bin(a))
-
-

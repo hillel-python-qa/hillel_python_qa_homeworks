@@ -5,4 +5,3 @@ for friend in friends:
         print(f'{friend} we are best friend')
     elif friend in enemies:
         print(f'{friend} we are not the friends anymore')
-
