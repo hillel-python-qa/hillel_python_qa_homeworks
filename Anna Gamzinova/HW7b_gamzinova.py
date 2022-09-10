@@ -9,3 +9,4 @@ def square(side_length):
 
 # Printing the result in tuple
 print(square(3))
+
