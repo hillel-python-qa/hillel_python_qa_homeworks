@@ -1,7 +1,7 @@
 # Implement your own implementation of the function map
 
 
-def my_map(callback, sequence) -> list:
+def my_map(callback: callable, sequence: iter) -> list:
     return [callback(item) for item in sequence]
 
 

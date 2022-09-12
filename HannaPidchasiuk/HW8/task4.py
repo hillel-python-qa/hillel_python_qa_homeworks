@@ -2,7 +2,7 @@
 # (* additional argument amount of result, if you pass 2, function should return 2 max values from the list)
 
 
-def my_max(arr: list, counter=1) -> list:
+def my_max(arr: list, counter: int = 1) -> list:
     result = []
     while counter >= 1:
         temp_max = arr[0]
@@ -17,7 +17,7 @@ def my_max(arr: list, counter=1) -> list:
     return result
 
 
-def my_min(arr: list, counter=1) -> list:
+def my_min(arr: list, counter: int = 1) -> list:
     result = []
     while counter >= 1:
         temp_min = arr[0]
