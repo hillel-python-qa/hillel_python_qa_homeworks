@@ -1,4 +1,7 @@
-def arithmetic(right_operand: int, left_operand: int, operation: str):
+def arithmetic(left_operand, right_operand, operation):
+    """
+        Apply arithmetic operation for provided left and right operands
+    """
     if operation == "+":
         return left_operand + right_operand
     elif operation == "-":
@@ -32,7 +35,6 @@ if __name__ == "__main__":
         arithmetic(left_operand=1, right_operand=2, operation="+")
     except TypeError as e:
         assert e.__class__ is TypeError
-
     try:
         arithmetic(1, right_operand=2, operation="+")
     except TypeError as e:
