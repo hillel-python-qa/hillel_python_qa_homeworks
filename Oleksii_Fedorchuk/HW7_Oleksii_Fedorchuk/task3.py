@@ -2,7 +2,7 @@
 and False otherwise."""
 
 if __name__ == "__main__":
-    def in_prime(number: int):
+    def in_prime(number: int) -> int | bool:
         if number <= 1:
             return False
         if number >= 1002:
