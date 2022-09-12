@@ -1,11 +1,14 @@
-def own_map(callback, data: list):
+from typing import Callable
+
+
+def own_map(callback: Callable, arr: list) -> list:
     """
         This function takes an argument(list) and returns a list modified by a callback function
     """
-    return [callback(element) for element in data]
+    return [callback(element) for element in arr]
 
 
-def own_map_1(callback, data1: list, data2: list):
+def own_map_1(callback: Callable, data1: list, data2: list) -> list:
     """
         This function takes arguments(2 lists) and returns a dictionary with the shortest length
     """
@@ -16,7 +19,7 @@ def own_map_1(callback, data1: list, data2: list):
     return result
 
 
-def check_len(data1: list, data2: list):
+def check_len(data1: list, data2: list) -> int:
     """
         This function takes arguments(2 lists) and returns the shortest length of them
     """

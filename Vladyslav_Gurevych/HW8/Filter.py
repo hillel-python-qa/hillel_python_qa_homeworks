@@ -1,8 +1,11 @@
-def own_filter(callback, data: list):
+from typing import Callable
+
+
+def own_filter(callback: Callable, arr: list) -> list:
     """
         This function takes arguments(list), makes a callback of another function, and returns a filtered list
     """
-    return [element for element in data if callback(element) is True]
+    return [element for element in arr if callback(element) is True]
 
 
 def is_it_digit(element):

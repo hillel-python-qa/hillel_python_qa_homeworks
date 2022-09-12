@@ -1,11 +1,11 @@
-def own_max(data: list, amount_of_result=1):
+def own_max(arr: list, amount_of_result: int = 1) -> list:
     """
        This function takes arguments(list and amount_of_result) and returns a list with a max value.
        The number of output values can be changed by entering amount_of_result.
     """
     result = []
-    temp = data[:]
-    for count in range(amount_of_result):
+    temp = arr[:]
+    for _ in range(amount_of_result):
         max_digit = temp[0]
         for i in range(1, len(temp)):
             if max_digit < temp[i]:
@@ -17,14 +17,14 @@ def own_max(data: list, amount_of_result=1):
     return result
 
 
-def own_min(data: list, amount_of_result=1):
+def own_min(arr: list, amount_of_result: int = 1) -> list:
     """
         This function takes arguments(list and amount_of_result) and returns a list with a max value.
         The number of output values can be changed by entering amount_of_result.
     """
     result = []
-    temp = data[:]
-    for count in range(amount_of_result):
+    temp = arr[:]
+    for _ in range(amount_of_result):
         min_digit = temp[0]
         for i in range(1, len(temp)):
             if min_digit > temp[i]:
