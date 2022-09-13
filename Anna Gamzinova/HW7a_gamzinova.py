@@ -1,6 +1,8 @@
 # arithmetic function
+from typing import Union
 
-def arithmetic(left_operand, right_operand, operation):
+
+def arithmetic(left_operand: float, right_operand: float, operation: str) -> Union[float, str]:
     """
         Apply arithmetic operation for provided left and right operands
     """
