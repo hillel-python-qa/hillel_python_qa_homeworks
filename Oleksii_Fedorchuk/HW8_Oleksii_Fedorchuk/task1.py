@@ -1,5 +1,8 @@
-def printing(item: int | str) -> int | str:
-    print(item)
+import sys
 
 
-printing(53406938459673985)
+def printing_func(item: str | int):
+    sys.stdout.write(item)
+
+
+printing_func("Hello")
