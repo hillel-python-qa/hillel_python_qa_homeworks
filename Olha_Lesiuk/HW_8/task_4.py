@@ -1,46 +1,38 @@
-def maximum(x: list, amount_of_result=1):
+def maximum(array: list, amount_of_result=1):
     """
-            Implementing my own max function.
+            Implement your own implementation of function max and min
+            (* additional argument amount of result, if you pass 2, function should return 2 max values from the list)
             """
 
-    max_number = x[0]
-    second_max_number = x[0]
-    if amount_of_result >= 2 or amount_of_result < 1:
-        raise Exception("The function should return 2 max values from the list")
-    elif amount_of_result == 2:
-        for i in x:
-            if i > max_number:
-                max_number = i
-        for i in x:
-            if max_number > i > second_max_number:
-                second_max_number = i
-        return max_number, second_max_number
-    else:
-        for i in x:
-            if i > max_number:
-                max_number = i
-    return max_number
+    result = []
+    while amount_of_result >= 1:
+        maximum_numbers = array[0]
+        for index in range(len(array) - 1):
+            if array[index] > maximum_numbers:
+                maximum_numbers = array[index]
+            else:
+                continue
+        result.append(maximum_numbers)
+        array.remove(maximum_numbers)
+        amount_of_result -= 1
+    return result
 
 
-def minimum(x: list, amount_of_result=1):
+def minimum(array: list, amount_of_result=1):
     """
-            Implementing my own min function.
+            Implement your own implementation of function max and min
+            (* additional argument amount of result, if you pass 2, function should return 2 max values from the list)
             """
 
-    min_number = x[0]
-    second_min_number = x[0]
-    if amount_of_result >= 2 or amount_of_result < 1:
-        raise Exception("The function should return 2 max values from the list")
-    elif amount_of_result == 2:
-        for i in x:
-            if i < min_number:
-                min_number = i
-        for i in x:
-            if min_number < i < second_min_number:
-                second_min_number = i
-        return min_number, second_min_number
-    else:
-        for i in x:
-            if i < min_number:
-                min_number = i
-    return min_number
+    result = []
+    while amount_of_result >= 1:
+        minimum_numbers = array[0]
+        for index in range(len(array) - 1):
+            if array[index] > minimum_numbers:
+                minimum_numbers = array[index]
+            else:
+                continue
+        result.append(minimum_numbers)
+        array.remove(minimum_numbers)
+        amount_of_result -= 1
+    return result

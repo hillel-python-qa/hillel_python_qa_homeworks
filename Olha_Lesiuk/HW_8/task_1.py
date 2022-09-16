@@ -8,7 +8,7 @@ It directly displays anything written to it to the Console.
 
 def print_to_stdout(*args, **kwargs):
     for arg in args:
-        print(*args, file=sys.stdout)
+        sys.stdout.write(str(*args))
     else:
         for key, value in kwargs.items():
-            print("%s == %s" % (key, value))
+            sys.stdout.write(str(kwargs))
