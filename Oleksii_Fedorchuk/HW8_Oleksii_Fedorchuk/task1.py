@@ -1,8 +1,9 @@
 import sys
 
 
-def printing_func(item: str | int):
-    sys.stdout.write(item)
+def printing_func(*args):
+    for arg in args:
+        sys.stdout.write(str(arg) + "")
 
 
-printing_func("Hello")
+printing_func("234")
