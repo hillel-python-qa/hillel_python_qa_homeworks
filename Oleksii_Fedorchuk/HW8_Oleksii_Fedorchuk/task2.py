@@ -1,4 +1,3 @@
-# print(list(filter(lambda item: item.startswith("B"), list_of_items))) - Example if filter
 from typing import Callable
 
 if __name__ == "__main__":
@@ -20,4 +19,5 @@ if __name__ == "__main__":
             else:
                 return False
 
+print(list(filter(lambda item: item.startswith("B"), list_of_items)))
 print(filter_func(checking, list_of_items))
