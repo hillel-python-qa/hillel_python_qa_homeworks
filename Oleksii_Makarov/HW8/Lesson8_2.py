@@ -1,14 +1,14 @@
 from typing import Callable
 
 
-def filter_func(callback: Callable, sequence: list) -> list:
+def filter_func(callback: Callable, sequence: iter) -> iter:
     """
     Returns items from sequence based on conditional callback
     """
     return [item for item in sequence if callback(item)]
 
 
-def condition_numbers(number):
+def condition_numbers(number: int|iter) -> bool:
     """
     Conditional function
     """
@@ -18,7 +18,7 @@ def condition_numbers(number):
         return True
 
 
-def condition_m(word):
+def condition_m(word: list) -> bool:
     """
     Conditional function
     """

@@ -1,21 +1,21 @@
 from typing import Callable
 
 
-def my_map(callback: Callable, sequence):
+def my_map(callback: Callable, sequence: iter) -> iter:
     """
     Applies a callback function to item from sequence
     """
     return [callback(item) for item in sequence]
 
 
-def uply_u(inputs):
+def uply_u(inputs: iter) -> iter:
     """
     Applies function for words
     """
     return inputs.upper()
 
 
-def uply_n(inputs):
+def uply_n(inputs: iter) -> iter:
     """
     Applies function for numbers
     """

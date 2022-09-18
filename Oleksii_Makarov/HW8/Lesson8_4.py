@@ -1,4 +1,4 @@
-def my_max(item: list):
+def my_max(item: iter) -> iter:
     """
     Reverse sorts a list and returns first position
     """
@@ -6,7 +6,7 @@ def my_max(item: list):
     return maxi[0]
 
 
-def my_min(item: list):
+def my_min(item: iter) -> iter:
     """
     Sorts a list and returns first position
     """

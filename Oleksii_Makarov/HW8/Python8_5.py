@@ -1,4 +1,4 @@
-def my_all(inp: list) -> bool:
+def my_all(inp: iter) -> bool:
     """
     Returns False if item in argument IS NOT True, otherwise returns True
     """
