@@ -1,6 +1,6 @@
 def my_max(item: list):
     """
-    Reverse sorts a list and returns first position, can return more if specified
+    Reverse sorts a list and returns first position
     """
     maxi = sorted(item, reverse=True)
     return maxi[0]
@@ -8,7 +8,7 @@ def my_max(item: list):
 
 def my_min(item: list):
     """
-    Sorts a list and returns first position, can return more if specified
+    Sorts a list and returns first position
     """
     mini = sorted(item, reverse=False)
     return mini[0]
