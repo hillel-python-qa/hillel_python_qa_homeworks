@@ -19,5 +19,5 @@ for value in range(100):
 try:
     os.makedirs(path)
     write_list_to_file(path, file_name, values)
-except:
+except FileExistsError:
     write_list_to_file(path, file_name, values)
