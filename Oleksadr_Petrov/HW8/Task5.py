@@ -1,4 +1,4 @@
-def custom_all(collection: iter):
+def custom_all(collection: iter) -> iter:
     for element in collection:
         if not bool(element):
             return False

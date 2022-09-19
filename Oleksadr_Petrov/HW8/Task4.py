@@ -1,4 +1,4 @@
-def custom_max(collection: iter, results_count: int = 1):
+def custom_max(collection: iter, results_count: int = 1) -> iter:
     if results_count == 0:
         return []
     elif results_count == len(collection):
@@ -17,7 +17,7 @@ def custom_max(collection: iter, results_count: int = 1):
     return max_elements
 
 
-def custom_min(collection: iter, results_count: int = 1):
+def custom_min(collection: iter, results_count: int = 1) -> iter:
     if results_count == 0:
         return []
     elif results_count == len(collection):

@@ -1,4 +1,4 @@
-def custom_filter(callback: callable, sequence: iter):
+def custom_filter(callback: callable, sequence: iter) -> iter:
     return [value for value in sequence if value == callback(value)]
 
 
@@ -9,5 +9,8 @@ def even_numbers(number: int):
 
 numbers = (0, 1, 2, 3, 4, 5, 6, 7, 8, 9)
 even = custom_filter(even_numbers, numbers)
+even = list(even)
+print(list(even))
+even = custom_filter(lambda number: number if number % 2 == 0 else None, numbers)
 even = list(even)
 print(list(even))
