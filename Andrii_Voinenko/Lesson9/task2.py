@@ -1,10 +1,6 @@
 def range_generator():
     counter = 0
     while counter <= 1000000000:
-        yield counter
+        if counter % 2 == 0:
+            yield pow(counter, 2)
         counter += 1
-
-
-for number in range_generator():
-    if number % 2 == 0:
-        print(pow(number, 2))

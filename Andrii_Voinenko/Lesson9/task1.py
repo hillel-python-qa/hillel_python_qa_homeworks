@@ -3,7 +3,7 @@ from typing import Callable
 
 def first_decorator(func: Callable):
     def to_print_func(number1, number2):
-        return f'{str(func)}\n{func(number1, number2)}'
+        return f'{str(func.__name__)}:\n{func(number1, number2)}'
 
     return to_print_func
 
