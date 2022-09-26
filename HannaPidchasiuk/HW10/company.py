@@ -98,9 +98,21 @@ class Company:
         for product in args:
             self.remove_one_product(product)
 
+    def get_domain_from_website(self):
+        """
+            Returns domain name from website.
+        """
+        website_pattern = re.compile(r'^(?:http:\/\/|www\.|https:\/\/)([^\/]+)')
+        domain = re.findall(website_pattern, self.__website)
+        if domain is not None:
+            return domain
+        else:
+            raise ValueError("Incorrect website provided!")
+
 
 if __name__ == "__main__":
-    company = Company("Test", 1000, ["1", "2", "test"], "skfj.com")
+    company = Company("Test", 1000, ["1", "2", "test"], "https://www.w3schools.com/python/python_regex.asp")
     company.remove_many_products("2", "1")
     company.add_many_products("1", "3")
     print(company.products)
+    print(company.get_domain_from_website())
