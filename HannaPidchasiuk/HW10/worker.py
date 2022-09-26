@@ -59,7 +59,10 @@ class Worker:
             Set new salary property of the worker.
             Takes only 1 argument: new_value.
         """
-        self.__salary = new_value
+        if new_value < 0:
+            raise ValueError("Salary can't be less than zero.")
+        else:
+            self.__salary = new_value
 
     @property
     def department(self):
