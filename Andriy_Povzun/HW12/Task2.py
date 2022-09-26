@@ -12,145 +12,142 @@ class Employee:
 
     @property
     def name(self):
+        """
+        The method is used to obtain the name of the employee
+        """
         return self.__name
-
-    """
-    The method is used to obtain the name of the employee
-    """
 
     @name.setter
     def name(self, new_name: str):
+        """
+        The method is used to assign a new name. This attribute could be static,
+        but theoretically the employee can change his name when he changes his passport
+        """
         self.__name = new_name
-
-    """
-    The method is used to assign a new name. This attribute could be static, 
-    but theoretically the employee can change his name when he changes his passport
-    """
 
     @name.deleter
     def name(self):
+        """
+        Deleter written so that users do not break the design of the class
+        """
         pass
-
-    """
-    Deleter written so that users do not break the design of the class
-    """
 
     @property
     def surname(self):
+        """
+        The method is used to obtain the surname of the employee
+        """
         return self.__surname
 
-    """
-    The method is used to obtain the surname of the employee
-    """
+    @surname.setter
+    def surname(self, new_surname: str):
+        """
+        The method is used to assign a new surname. This attribute could be static,
+        but theoretically the employee can change his surname when he changes his passport,
+        or married
+        """
+        self.__surname = new_surname
 
     @surname.deleter
     def surname(self):
+        """
+        Deleter written so that users do not break the design of the class
+        """
         pass
-
-    """
-    Deleter written so that users do not break the design of the class
-    """
 
     @property
     def age(self):
+        """
+        The method is used to obtain the age of the employee
+        """
         return self.__age
 
-    """
-    The method is used to obtain the age of the employee
-    """
+    def grow_up(self, ages: int):
+        """
+        The employee will become older by the number of years indicated in the function
+        """
+        self.__age += ages
 
     @age.deleter
     def age(self):
+        """
+        Deleter written so that users do not break the design of the class
+        """
         pass
-
-    """
-    Deleter written so that users do not break the design of the class
-    """
 
     @property
     def work_place(self):
+        """
+        The method is used to obtain the work place of the employee
+        """
         return self.__work_place
 
-    """
-    The method is used to obtain the work place of the employee
-    """
-
     def change_work_place(self, new_work_place: str, new_position: str, new_salary: int):
+        """
+        The method is used to change the work of an employee.
+        This function uses 3 attributes at once, because when changing jobs,
+        position and salary almost never remain untouched
+        """
         self.__work_place = new_work_place
         self.__position = new_position
         self.__salary = new_salary
-        return self
-
-    """
-    The method is used to change the work of an employee. 
-    This function uses 3 attributes at once, because when changing jobs,
-     position and salary almost never remain untouched
-    """
 
     def dismiss_employee(self):
+        """
+        The method is used to fire an employee
+        """
         self.__work_place = None
         self.__position = WITHOUT_WORK
         self.__salary = None
 
-    """
-    The method is used to fire an employee
-    """
-
     @work_place.deleter
     def work_place(self):
+        """
+        Deleter written so that users do not break the design of the class
+        """
         pass
-
-    """
-    Deleter written so that users do not break the design of the class
-    """
 
     @property
     def position(self):
+        """
+        The method is used to obtain the position of the employee
+        """
         return self.__position
-
-    """
-    The method is used to obtain the position of the employee
-    """
 
     @position.setter
     def position(self, new_position: str):
+        """
+        The method is used to change the position of an employee in the current job
+        """
         self.__position = new_position
-
-    """
-    The method is used to change the position of an employee in the current job
-    """
 
     @position.deleter
     def position(self):
+        """
+        Deleter written so that users do not break the design of the class
+        """
         pass
-
-    """
-    Deleter written so that users do not break the design of the class
-    """
 
     @property
     def salary(self):
+        """
+        The method is used to obtain the salary of the employee
+        """
         return self.__salary
-
-    """
-    The method is used to obtain the salary of the employee
-    """
 
     @salary.setter
     def salary(self, new_salary: int):
+        """
+        The method is used to change the employee's salary
+        """
         self.__salary = new_salary
-
-    """
-    The method is used to change the employee's salary
-    """
 
     @salary.deleter
     def salary(self):
+        """
+        Deleter written so that users do not break the design of the class
+        """
         pass
-
-    """
-    Deleter written so that users do not break the design of the class
-    """
 
 
 if __name__ == '__main__':
