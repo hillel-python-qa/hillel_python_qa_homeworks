@@ -46,9 +46,7 @@ class Company:
            The method is used to add new company products
         """
         for arg in args:
-            if arg in self.__company_products:
-                raise TypeError(f'Such a product already exists: {arg}')
-            else:
+            if arg not in self.__company_products:
                 self.__company_products.append(arg)
 
     def withdraw_from_production(self, *args: tuple):
@@ -56,9 +54,7 @@ class Company:
             The method is used to withdraw products remove the product/products from production
         """
         for arg in args:
-            if arg not in self.__company_products:
-                raise TypeError(f'Тo such element exists: {arg}')
-            else:
+            if arg in self.__company_products:
                 self.__company_products.remove(arg)
 
     @company_products.deleter
