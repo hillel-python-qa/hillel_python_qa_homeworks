@@ -66,7 +66,10 @@ class Employee:
         """
         The employee will become older by the number of years indicated in the function
         """
-        self.__age += ages
+        if ages > 0:
+            self.__age += ages
+        else:
+            raise TypeError('Value cannot be less than 1')
 
     @age.deleter
     def age(self):
@@ -156,3 +159,5 @@ if __name__ == '__main__':
     print(bob.work_place, bob.position, bob.salary)
     bob.dismiss_employee()
     print(bob.work_place, bob.position, bob.salary)
+    bob.grow_up(1)
+    print(bob.age)
