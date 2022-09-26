@@ -1,6 +1,3 @@
-from typing import Union
-
-
 class Company:
     def __init__(self, company_name: str, number_employees: int, company_products: list, country: str):
         self.__company_name = company_name
