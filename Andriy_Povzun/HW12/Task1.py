@@ -11,19 +11,17 @@ class Company:
 
     @company_name.setter
     def company_name(self, new_company_name: str):
+        """
+            The method is used to change the company name
+        """
         self.__company_name = new_company_name
-
-    """
-    The method is used to change the company name
-    """
 
     @company_name.deleter
     def company_name(self):
+        """
+            Deleter written so that users do not break the design of the class
+        """
         pass
-
-    """
-    Deleter written so that users do not break the design of the class
-    """
 
     @property
     def number_employees(self):
@@ -34,41 +32,41 @@ class Company:
 
     @number_employees.deleter
     def number_employees(self):
+        """
+            Deleter written so that users do not break the design of the class
+        """
         pass
-
-    """
-    Deleter written so that users do not break the design of the class
-    """
 
     @property
     def company_products(self):
         return self.__company_products
 
-    def add_new_products(self, *args: str):
-        self.__company_products.append(*args)
+    def add_new_products(self, *args: tuple):
+        """
+           The method is used to add new company products
+        """
+        for arg in args:
+            if arg in self.__company_products:
+                raise TypeError(f'Such a product already exists: {arg}')
+            else:
+                self.__company_products.append(arg)
 
-    """
-    The method is used to add new company products
-    """
-
-    def withdraw_from_production(self, *args: str):
+    def withdraw_from_production(self, *args: tuple):
+        """
+            The method is used to withdraw products remove the product/products from production
+        """
         for arg in args:
             if arg not in self.__company_products:
                 raise TypeError(f'Тo such element exists: {arg}')
             else:
                 self.__company_products.remove(arg)
 
-    """
-    The method is used to withdraw products remove the product/products from production
-    """
-
     @company_products.deleter
     def company_products(self):
+        """
+            Deleter written so that users do not break the design of the class
+        """
         pass
-
-    """
-    Deleter written so that users do not break the design of the class
-    """
 
     @property
     def country(self):
@@ -80,17 +78,15 @@ class Company:
 
     @country.deleter
     def country(self):
+        """
+            Deleter written so that users do not break the design of the class
+        """
         pass
-
-    """
-    Deleter written so that users do not break the design of the class
-    """
 
 
 if __name__ == '__main__':
     apple = Company('Apple inc.', 80000, ['MacBook', 'iPhone', 'AirPods'], 'USA')
     print(apple.company_products)
-    apple.add_new_products('iPad, iPod')
-    print(apple.company_products)
+    apple.add_new_products('iPad', 'iPod')
     apple.withdraw_from_production('MacBook', 'iPhone')
     print(apple.company_products)
