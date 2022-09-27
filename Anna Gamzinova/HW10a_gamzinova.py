@@ -59,7 +59,7 @@ class Company:
         else:
             print("The number of employees can not be negative")
 
-    def add_employee(self, new_employee_number=1):
+    def add_employee(self, new_employee_number: int = 1):
         """
         A method to add the number of employees to the existing one
         """
@@ -113,7 +113,7 @@ class Company:
         return self.__service
 
     @service.setter
-    def service(self, new_service):
+    def service(self, new_service: str):
         """
         A method to update the company's service
         """
