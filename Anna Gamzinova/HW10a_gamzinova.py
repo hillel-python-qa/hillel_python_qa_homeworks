@@ -23,7 +23,10 @@ class Company:
         """
         A method to change the company's name
         """
-        self.__name = new_name
+        if len(new_name):
+            self.__name = new_name
+        else:
+            print("Your name is empty, can not update")
 
     @property
     def industry(self):
@@ -39,6 +42,8 @@ class Company:
         """
         if new_industry in self.__industry:
             print(f"{new_industry} can not be added")
+        elif not len(new_industry):
+            print("Your new industry is empty, can not update it")
         else:
             self.industry.add(new_industry)
 
@@ -77,7 +82,10 @@ class Company:
         """
         A method to update the headquarters location
         """
-        self.__headquarter = new_headquarter
+        if len(new_headquarter):
+            self.__headquarter = new_headquarter
+        else:
+            print("Your headquarter name is empty, can not update")
 
     @property
     def product(self):
@@ -93,6 +101,8 @@ class Company:
         """
         if new_product in self.__product:
             print(f"{new_product} can not be added")
+        elif not len(new_product):
+            print("Your new product is empty can not update it")
         else:
             self.__product.add(new_product)
 
@@ -119,6 +129,8 @@ class Company:
         """
         if new_service in self.__service:
             print(f"{new_service} can not be added")
+        elif not len(new_service):
+            print("Your new service is empty can not update it ")
         else:
             self.__service.add(new_service)
 
@@ -155,3 +167,9 @@ if __name__ == '__main__':
     print(my_company.service)
     my_company.service = "Apple TV+"
     print(my_company.service)
+    print("+++++++++")
+    my_company.name = ""
+    my_company.industry = ""
+    my_company.headquarter = ""
+    my_company.product = ""
+    my_company.service = ""

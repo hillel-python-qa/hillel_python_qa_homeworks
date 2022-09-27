@@ -21,7 +21,10 @@ class Employee:
         """
         A method to change the employee's name
         """
-        self.__name = new_name
+        if len(new_name):
+            self.__name = new_name
+        else:
+            print("Your name is empty, can not update")
 
     @property
     def last_name(self):
@@ -35,7 +38,10 @@ class Employee:
         """
         A method to change the employee's last name
         """
-        self.__last_name = new_last_name
+        if len(new_last_name):
+            self.__last_name = new_last_name
+        else:
+            print("Your last name is empty, can not update")
 
     @property
     def position(self):
@@ -49,13 +55,19 @@ class Employee:
         """
         A method to change the employee's position
         """
-        self.__position = new_position
+        if len(new_position):
+            self.__position = new_position
+        else:
+            print("Your position is empty, can not update")
 
     def position_promotion(self, position_promotion: str):
         """
         A method to update the employee's position
         """
-        self.__position = "".join([position_promotion, " ", self.__position])
+        if len(position_promotion):
+            self.__position = "".join([position_promotion, " ", self.__position])
+        else:
+            print("Your position promotion is empty, can not update")
 
     @property
     def salary(self):
@@ -105,3 +117,7 @@ if __name__ == '__main__':
     print(employee_1.salary)
     employee_1.salary = 9000
     print(employee_1.salary)
+    employee_1.name = ""
+    employee_1.last_name = ""
+    employee_1.position = ""
+    employee_1.position_promotion("")
