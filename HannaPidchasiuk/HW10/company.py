@@ -22,7 +22,10 @@ class Company:
             Set new name of the worker.
             Takes only 1 argument: new_value.
         """
-        self.__name = new_value
+        if new_value:
+            self.__name = new_value
+        else:
+            raise ValueError("New value can't be empty!")
 
     @property
     def number_of_employees(self):
@@ -55,7 +58,10 @@ class Company:
             Add new product to products.
             Takes only 1 argument: new_value.
         """
-        self.__products.append(new_value)
+        if new_value in self.__products:
+            raise ValueError("Product already exists!")
+        else:
+            self.__products.append(new_value)
 
     @property
     def website(self):
@@ -70,17 +76,16 @@ class Company:
             Set new website of the company.
             Takes only 1 argument: new_value.
         """
-        self.__website = new_value
+        if re.match(r'^(?:http:\/\/|www\.|https:\/\/)([^\/]+)', new_value):
+            self.__website = new_value
+        else:
+            raise ValueError("Incorrect website provided!")
 
-    def add_many_products(self, *args):
+    def add_many_products(self, *args: str):
         """
             Adds many products to the list if they are not exists.
         """
-        for product in args:
-            if product in self.__products:
-                raise ValueError(f"Product {product} is already in the list")
-            else:
-                self.__products.append(product)
+        self.__products = list(set(self.__products).union(set(args)))
 
     def remove_one_product(self, product_to_remove: str):
         """
@@ -89,7 +94,7 @@ class Company:
         if product_to_remove in self.__products:
             self.__products.remove(product_to_remove)
         else:
-            raise ValueError(f"Product {product_to_remove} is not exists!")
+            print(f"No '{product_to_remove}' product to remove.")
 
     def remove_many_products(self, *args: str):
         """
@@ -112,7 +117,8 @@ class Company:
 
 if __name__ == "__main__":
     company = Company("Test", 1000, ["1", "2", "test"], "https://www.w3schools.com/python/python_regex.asp")
-    company.remove_many_products("2", "1")
+    # company.website = "skjdfdkjf"
+    company.remove_many_products("2", "0")
     company.add_many_products("1", "3")
     print(company.products)
     print(company.get_domain_from_website())
