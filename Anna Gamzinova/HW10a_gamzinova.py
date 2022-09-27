@@ -3,7 +3,7 @@ class Company:
     Class Company that contain name, industry, employees, headquarter, product and services.
     """
 
-    def __init__(self, name: str, industry: str, employees: list, headquarter: str, product: set, service: set):
+    def __init__(self, name: str, industry: set, employees: int, headquarter: str, product: set, service: set):
         self.__name = name
         self.__industry = industry
         self.__employees = employees
@@ -37,7 +37,10 @@ class Company:
         """
         A method to update the company's industry
         """
-        self.__industry = new_industry
+        if new_industry in self.__industry:
+            print(f"{new_industry} can not be added")
+        else:
+            self.industry.add(new_industry)
 
     @property
     def employees(self):
@@ -54,13 +57,13 @@ class Company:
         if new_employees_number > -1:
             self.__employees = new_employees_number
         else:
-            raise ValueError("The number of employees can not be negative")
+            print("The number of employees can not be negative")
 
     def add_employee(self, new_employee_number=1):
         """
         A method to add the number of employees to the existing one
         """
-        return sum(self.__employees, new_employee_number)
+        self.__employees += new_employee_number
 
     @property
     def headquarter(self):
@@ -71,41 +74,84 @@ class Company:
 
     @headquarter.setter
     def headquarter(self, new_headquarter: str):
-        # if new_headquarter != "":
+        """
+        A method to update the headquarters location
+        """
         self.__headquarter = new_headquarter
-        # else:
-        #     raise ValueError("Headquarters name can not be empty")
 
     @property
     def product(self):
+        """
+        A method to get the company's product
+        """
         return self.__product
 
     @product.setter
     def product(self, new_product: str):
+        """
+        A method to update the company's product
+        """
         if new_product in self.__product:
-            raise ValueError(f"{new_product} can not be added")
+            print(f"{new_product} can not be added")
         else:
             self.__product.add(new_product)
 
     def remove_product(self, product_to_remove: str):
+        """
+        A method to remove the company's product
+        """
         if product_to_remove in self.__product:
             self.__product.remove(product_to_remove)
         else:
-            raise ValueError(f"{product_to_remove} can not be removed")
+            print(f"{product_to_remove} can not be removed")
 
     @property
     def service(self):
+        """
+        A method to get the company's service
+        """
         return self.__service
 
     @service.setter
     def service(self, new_service):
+        """
+        A method to update the company's service
+        """
         if new_service in self.__service:
-            raise ValueError(f"{new_service} can not be added")
+            print(f"{new_service} can not be added")
         else:
             self.__service.add(new_service)
 
     def remove_service(self, service_to_remove: str):
+        """
+        A method to remove the company's service
+        """
         if service_to_remove in self.__service:
             self.__service.remove(service_to_remove)
         else:
-            raise ValueError(f"{service_to_remove} can not be removed")
+            print(f"{service_to_remove} can not be removed")
+
+
+if __name__ == '__main__':
+    my_company = Company("Apple", {"Consumer electronics"}, 153000, "California",
+                         {"IPhone", "AirPods", "IPad"}, {"AppStore", "Apple Music"})
+    my_company.name = "Apple Computers Inc."
+    print(my_company.name)
+    my_company.industry = "Consumer electronics"
+    my_company.industry = "Software service"
+    print(my_company.industry)
+    my_company.employees = 154000
+    print(my_company.employees)
+    my_company.add_employee(10)
+    print(my_company.employees)
+    my_company.headquarter = "1 Apple Park Way, Cupertino, California, USA"
+    print(my_company.headquarter)
+    my_company.product = "IPhone"
+    my_company.remove_product("TEST")
+    my_company.product = "Macintosh"
+    print(my_company.product)
+    my_company.service = "Apple Music"
+    my_company.remove_service("Apple Music")
+    print(my_company.service)
+    my_company.service = "Apple TV+"
+    print(my_company.service)
