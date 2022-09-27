@@ -29,7 +29,10 @@ class Worker:
             Set new first_name property of the worker.
             Takes only 1 argument: new_value.
         """
-        self.__first_name = new_value
+        if new_value:
+            self.__first_name = new_value
+        else:
+            raise ValueError("New value can't be empty!")
 
     @property
     def last_name(self):
@@ -44,7 +47,10 @@ class Worker:
             Set new last_name property of the worker.
             Takes only 1 argument: new_value.
         """
-        self.__last_name = new_value
+        if new_value:
+            self.__last_name = new_value
+        else:
+            raise ValueError("New value can't be empty!")
 
     @property
     def salary(self):
@@ -122,7 +128,10 @@ class Worker:
             Set new first working day date.
             Takes only 1 argument: new_value.
         """
-        self.__date_of_start = new_value
+        if new_value > datetime.now():
+            raise ValueError("Date can't be from future")
+        else:
+            self.__date_of_start = new_value
 
     def count_overtimes(self, overtime_hours: int, average_hours: float) -> float:
         """
@@ -141,6 +150,9 @@ class Worker:
             If less than 1 year only month number will be returned.
             If less than 1 month - number of working days will be returned.
         """
+        if self.__date_of_start > datetime.now():
+            raise ValueError("Date can't be from future")
+
         period = datetime.now() - self.__date_of_start
         years = period.days // 365
         months = (period.days % 365) // 31
@@ -161,7 +173,7 @@ class Worker:
 
 if __name__ == "__main__":
     worker = Worker("name", "last_name", 12333, Department.QA_MANUAL, Grade.JUNIOR,
-                    TypeOfWork.OFFICE, datetime(2022, 8, 27))
+                    TypeOfWork.OFFICE, datetime(2022, 9, 27))
     worker.type_of_work = TypeOfWork.REMOTE
     worker.last_name = "kjf"
     print(worker.count_working_period())
