@@ -29,18 +29,24 @@ class Company:
 
     def company_description(self):
         """Show company description"""
+        company_description = self.__company_description
+        print(company_description)
 
-        description = (f"Company name is:{self.__company_name}\nCompany website is:{self.__company_website}\n"
-                       f"Company description is:{self.__company_description}\n"
-                       f"Company products are:{self.__company_products}")
-        print(description)
+    def company_bio(self):
+        """Full information about company"""
+
+        bio = (f"Company name is:{self.__company_name}\n"
+               f"Company website is:{self.__company_website}\n"
+               f"Company description is:{self.__company_description}\n"
+               f"Company products are:{self.__company_products}\n")
+        print(bio)
 
 
 if __name__ == "__main__":
     Apple = Company('Apple', "www.apple.com", "Hardware and Software developing", "Iphone")
-    Apple.company_description()
+    Apple.company_bio()
     Google = Company('Google', "www.google.com", "Software developing", "Pixel")
     Google.company_name()
     Google.company_website()
+    Google.company_description()
     Google.company_products()
-
