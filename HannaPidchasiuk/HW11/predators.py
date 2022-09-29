@@ -19,3 +19,9 @@ class Predators(Mammals):
         else:
             raise ValueError("number_of_teeth can't be less than zero!")
 
+    def lose_tooth(self):
+        if self.__number_of_teeth > 0:
+            return self.__number_of_teeth - 1
+        else:
+            print("No tooth to lose.")
+
