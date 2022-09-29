@@ -9,10 +9,17 @@ class Mammals(Animals):
 
     @property
     def number_of_paws(self):
+        """
+            Returns number of paws of the mammal.
+        """
         return self.__number_of_paws
 
     @number_of_paws.setter
     def number_of_paws(self, new_value):
+        """
+            Set new number of paws of the mammal.
+            Takes only 1 argument: new_value.
+        """
         if not new_value < 0:
             self.__number_of_paws = new_value
         else:

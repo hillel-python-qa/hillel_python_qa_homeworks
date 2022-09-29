@@ -10,16 +10,26 @@ class Predators(Mammals):
 
     @property
     def number_of_teeth(self):
+        """
+            Returns number of teeth of the predator.
+        """
         return self.__number_of_teeth
 
     @number_of_teeth.setter
     def number_of_teeth(self, new_value: int):
+        """
+            Set new number of teeth of the predator.
+            Takes only 1 argument: new_value.
+        """
         if not new_value < 0:
             self.__number_of_teeth = new_value
         else:
             raise ValueError("number_of_teeth can't be less than zero!")
 
     def lose_tooth(self):
+        """
+            Decreases nuber of teeth.
+        """
         if self.__number_of_teeth > 0:
             return self.__number_of_teeth - 1
         else:
