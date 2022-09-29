@@ -1,3 +1,4 @@
+from HannaPidchasiuk.HW11.area_of_living_enum import AreaOfLiving
 from HannaPidchasiuk.HW11.mamals import Mammals
 
 
@@ -35,3 +36,9 @@ class Predators(Mammals):
         else:
             print("No tooth to lose.")
 
+
+if __name__ == '__main__':
+    cat = Predators("Cat", 40, AreaOfLiving.SAVANNA, 4, 40)
+    cat.subspecies_die()
+    cat.found_new_subspecies()
+    cat.lose_tooth()
