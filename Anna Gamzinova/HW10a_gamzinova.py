@@ -68,7 +68,10 @@ class Company:
         """
         A method to add the number of employees to the existing one
         """
-        self.__employees += new_employee_number
+        if new_employee_number > -1:
+            self.__employees = new_employee_number
+        else:
+            print("The number of employees can not be negative")
 
     @property
     def headquarter(self):
@@ -155,6 +158,7 @@ if __name__ == '__main__':
     my_company.employees = 154000
     print(my_company.employees)
     my_company.add_employee(10)
+    my_company.add_employee(-1000)
     print(my_company.employees)
     my_company.headquarter = "1 Apple Park Way, Cupertino, California, USA"
     print(my_company.headquarter)
