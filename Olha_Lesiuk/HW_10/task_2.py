@@ -1,14 +1,18 @@
+import datetime
+from datetime import date
+
+
 class Employees:
 
     """
     The init method or constructor
     """""
-    def __init__(self, name: str, age: int, gender: str, position: str, company: str, salary: int):
+    def __init__(self, name: str, birth: datetime.date, gender: str, position: str, company: str, salary: int):
         """"
         Instance Variable
         """
         self.__name = name
-        self.__age = age
+        self.__birth = birth
         self.__gender = gender
         self.__position = position
         self.__company = company
@@ -26,23 +30,16 @@ class Employees:
         """
         The method is used in case of changing to the new name
         """
-        self.__name = name
+        if name:
+            self.__name = name
+        else:
+            raise ValueError("You should enter a name!")
 
     @property
-    def age(self):
-        """
-        The method is used to obtain worker's age
-        """
-        return self.__age
-
-    @age.setter
-    def age(self, age: int):
-        """
-        The method is used in case of reaching a certain age
-        """
-        if age < 18:
-            raise ValueError("Sorry, your age is below eligibility criteria for this position")
-        self.__age = age
+    def get_age(self):
+        today = date.today()
+        age = today.year - self.__birth.year - ((today.month, today.day) < (self.__birth.month, self.__birth.day))
+        return age
 
     @property
     def gender(self):
@@ -56,7 +53,10 @@ class Employees:
         """
         The method is used in case of changing gender
         """
-        self.__gender = gender
+        if gender:
+            self.__gender = gender
+        else:
+            raise ValueError("You should enter a gender!")
 
     @property
     def position(self):
@@ -70,7 +70,10 @@ class Employees:
         """
         The method is used in case of promotion to the higher position
         """
-        self.__position = position
+        if position:
+            self.__position = position
+        else:
+            raise ValueError("Your should enter a position!")
 
     @property
     def company(self):
@@ -84,7 +87,10 @@ class Employees:
         """
         The method is used in case of changing to the new company
         """
-        self.__company = company
+        if company:
+            self.__company = company
+        else:
+            raise ValueError("You should enter company name!")
 
     @property
     def salary(self):
@@ -98,10 +104,17 @@ class Employees:
         """
         The method is used in case of changing a salary
         """
-        self.__salary = salary
+        if salary:
+            self.__salary = salary and salary > 0
+        else:
+            raise ValueError("You should enter valid amount of salary!")
+
+    def raise_salary(self, amount: int):
+        self.__salary = self.salary + amount
 
 
 if __name__ == '__main__':
-    john = Employees(name='John Wick', age=35, gender='male', position='hitman', company='Unknown', salary=4000)
-    john.age = 15
-    print(john.name, john.age, john.gender, john.position, john.company, john.salary)
+    john = Employees(name='John', birth=datetime.date(1988, 12, 2),
+                     gender='male', position='qa', company='Hyfe', salary=200)
+    print(john.name, john.gender, john.position, john.company, john.salary)
+    print('John is {} years old'.format(john.get_age))
