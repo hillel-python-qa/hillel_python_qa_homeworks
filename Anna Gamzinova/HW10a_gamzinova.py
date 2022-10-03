@@ -69,7 +69,7 @@ class Company:
         A method to add the number of employees to the existing one
         """
         if new_employee_number > -1:
-            self.__employees = new_employee_number
+            self.__employees += new_employee_number
         else:
             print("The number of employees can not be negative")
 
