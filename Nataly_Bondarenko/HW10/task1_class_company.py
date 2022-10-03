@@ -22,7 +22,7 @@ class Company:
         """
         Method changing the company's name
         """
-        if len(new_company_name):
+        if new_company_name:
             self.__company_name = new_company_name
         else:
             print('Empty value is not supported for company name')
@@ -48,7 +48,7 @@ class Company:
         """
         if new_company_product in self.__company_products:
             print(f"{new_company_product} is already in the company products list")
-        elif not len(new_company_product):
+        elif not new_company_product:
             print('Empty value is not supported for company product')
         else:
             self.__company_products.append(new_company_product)
@@ -70,7 +70,7 @@ class Company:
         return self.__number_of_employees
 
     @number_of_employees.setter
-    def number_of_employees(self, new_employees: str):
+    def number_of_employees(self, new_employees: int):
         """
         Method to update the number of the company's employees
         """
@@ -78,6 +78,15 @@ class Company:
             print(f'{new_employees} unsupported number of employees')
         else:
             self.__number_of_employees += new_employees
+
+    def dismissal_employees(self, dismissal_employees: int):
+        """
+        Method to dismissal number of company employees
+        """
+        if dismissal_employees < 1:
+            print('the number of dismissed employees cannot be less than 1')
+        else:
+            self.__number_of_employees = self.__number_of_employees - dismissal_employees
 
     @property
     def company_locations(self):
@@ -93,10 +102,19 @@ class Company:
         """
         if new_company_location in self.__company_locations:
             print(f"{new_company_location} is already in the company location list")
-        elif not len(new_company_location):
+        elif not new_company_location:
             print('Empty value is not supported for company location')
         else:
             self.__company_locations.append(new_company_location)
+
+    def location_to_remove(self, location_to_remove: str):
+        """
+        Method to remove the company products
+        """
+        if location_to_remove in self.__company_locations:
+            return self.__company_locations.remove(location_to_remove)
+        else:
+            print(f'{location_to_remove} can not be found in company product list')
 
 
 if __name__ == '__main__':
@@ -105,10 +123,14 @@ if __name__ == '__main__':
 
     my_company_Dell.company_name = 'samsung'
     print(my_company_Dell.company_name)
+    my_company_Dell.company_name = ''
+    print(my_company_Dell.company_name)
     del my_company_Dell.company_name
     print(my_company_Dell.company_name)
 
     my_company_Dell.company_products = 'Camera'
+    print(my_company_Dell.company_products)
+    my_company_Dell.company_products = ''
     print(my_company_Dell.company_products)
     my_company_Dell.product_to_remove('Camera')
     print(my_company_Dell.company_products)
@@ -122,3 +144,4 @@ if __name__ == '__main__':
     print(my_company_Dell.company_locations)
     my_company_Dell.company_locations = ''
     print(my_company_Dell.company_locations)
+

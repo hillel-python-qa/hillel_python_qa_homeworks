@@ -18,7 +18,7 @@ class Worker:
         """
         method allows to change the name of the worker
         """
-        if len(new_first_name):
+        if new_first_name:
             self.__first_name = new_first_name.capitalize()
         else:
             print('Empty value is not supported for worker name')
@@ -41,7 +41,7 @@ class Worker:
     def last_name(self, new_last_name: str):
         if self.__last_name == new_last_name:
             print(f'{new_last_name} - this last name already exists for this worker')
-        elif not len(new_last_name):
+        elif not new_last_name:
             print('Empty value is not supported for worker last name')
         else:
             self.__last_name = new_last_name.capitalize()
@@ -60,12 +60,11 @@ class Worker:
         """
         return self.__age
 
-    @age.setter
-    def age(self, age_verification):
+    def age_verification(self):
         """
         Method verified that worker's age is more than 18 years old
         """
-        if age_verification < 18:
+        if self.__age < 18:
             print(f'Sorry, people under 18 years old can not works in our company')
         else:
             print('We are glad that you are part of our company')
@@ -94,7 +93,7 @@ class Worker:
         """
         if self.__position == new_position:
             print('this position is identical to the one in which the employee is already works')
-        elif not len(new_position):
+        elif not new_position:
             print('Empty value is not supported for determine the position')
         else:
             self.__position = new_position
@@ -154,11 +153,10 @@ if __name__ == '__main__':
     print(worker.first_name)
 
     worker.last_name = 'Eggs'
+    print(worker.last_name)
+    worker.last_name = 'Eggs'
     worker.last_name = 'brauni'
     print(worker.last_name)
-
-    worker.age = 5
-    worker.age = 22
     print(worker.age)
     worker.grow_up()
     print(worker.age)
