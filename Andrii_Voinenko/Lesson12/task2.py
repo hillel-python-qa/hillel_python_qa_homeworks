@@ -46,14 +46,20 @@ class Employee:
         """
         Allows set new name to employee
         """
-        self.__name = new_name
+        if not new_name.strip():
+            raise TypeError('You cannot set empty value')
+        else:
+            self.__name = new_name.strip()
 
     @salary.setter
     def salary(self, new_salary):
         """
         Allows set new salary to employee
         """
-        self.__salary = new_salary
+        if new_salary < 0:
+            raise TypeError("You cannot set value below 0")
+        else:
+            self.__salary = new_salary
 
     @property
     def course_access(self):
@@ -87,8 +93,6 @@ class Employee:
 if __name__ == '__main__':
     josh = Employee('Josh', '01/10/2020', 1200, 'middle')
 
-    print(josh.salary)
-    print(josh.employee_bonus())
-    josh.employee_access()
-    print(josh.course_access)
+    josh.salary = 0
+
 
