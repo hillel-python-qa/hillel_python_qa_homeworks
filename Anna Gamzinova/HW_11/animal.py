@@ -61,7 +61,10 @@ class Animal:
         """
         A method to change the animal's sound in case of attack
         """
-        print(f"{self.__sound} watch out, I am going to attack you!")
+        if not self.__vegetarian:
+            print(f"{self.__sound} watch out, I am going to attack you!")
+        else:
+            print(f"{self.__sound} I will not attack you, let's be friends!")
 
     @property
     def speed(self):
@@ -98,23 +101,30 @@ class Animal:
 
     @vegetarian.setter
     def vegetarian(self, is_vegetarian: bool):
+        """
+        A method to update the animal's diet
+        """
         self.__vegetarian = is_vegetarian
 
     def predator(self):
+        """
+        A method to check if the animal is predator
+        """
         if not self.__vegetarian:
             print(f"{self.__sound},I love meat!")
         else:
             print("Yuk, I do not eat meat!")
 
 
-lion = Animal("afrika", 4, "Roarr!", 100, False)
-print(lion.origin)
-lion.origin = "australia"
-print(lion.origin)
-lion.origin = ""
-lion.attack_sound()
-lion.speed_up(50)
-print(lion.speed)
-lion.vegetarian = True
-print(lion.vegetarian)
-lion.predator()
+if __name__ == '__main__':
+    lion = Animal("africa", 4, "Roar!", 100, False)
+    print(lion.origin)
+    lion.origin = "australia"
+    print(lion.origin)
+    lion.origin = ""
+    lion.attack_sound()
+    lion.speed_up(50)
+    print(lion.speed)
+    # lion.vegetarian = True
+    # print(lion.vegetarian)
+    lion.predator()
