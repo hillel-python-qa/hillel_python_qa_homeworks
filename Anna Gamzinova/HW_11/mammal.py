@@ -25,7 +25,7 @@ class Mammal(Animal):
         else:
             print("You are not able to set a negative value to the mammal's pregnancy period")
 
-    def new_life(self, current_pregnancy_period):
+    def new_life(self, current_pregnancy_period: int):
         if current_pregnancy_period > self.__pregnancy_period:
             print(f"{self.sound} hello world,I was born")
         else:
