@@ -1,4 +1,4 @@
-from Animals import Animals
+from hillel_python_qa_homeworks.Olha_Lesiuk.HW_11.Animals import Animals
 
 
 class Mammals(Animals):
