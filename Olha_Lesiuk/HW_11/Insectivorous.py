@@ -1,4 +1,4 @@
-from Mammals import Mammals
+from hillel_python_qa_homeworks.Olha_Lesiuk.HW_11.Mammals import Mammals
 
 
 class Insectivorous(Mammals):
