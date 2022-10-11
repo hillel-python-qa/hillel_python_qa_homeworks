@@ -17,7 +17,6 @@ class CustomIterator:
             raise ValueError("Your start index is out of range")
         elif math.fabs(self.__end_index) > len(self.__sequence):
             raise ValueError("Your end index is out of range")
-
         elif self.__start_index < self.__end_index:
             number = self.__sequence[self.__start_index]
             self.__start_index += 1
@@ -27,7 +26,7 @@ class CustomIterator:
 
 
 if __name__ == '__main__':
-    custom_iterator = CustomIterator([1, 2, 3, 4, 5], -6, 4)
+    custom_iterator = CustomIterator([1, 2, 3, 4, 5], -5, -2)
 
     for item in custom_iterator:
         print(item)
