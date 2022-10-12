@@ -1,15 +1,24 @@
-from abc import ABC, abstractmethod
+# abstraction
+from abc import abstractmethod
 
 
 class ICamping:
     @abstractmethod
-    def set_a_tent(self):
-        print("Your tent is ready for resting")
+    def set_tent(self):
+        pass
 
     @abstractmethod
-    def campfire(self):
-        print("The heat is high, ready for the barbeque")
+    def pack_tent(self):
+        pass
+
+    @abstractmethod
+    def set_campfire(self):
+        pass
 
     @abstractmethod
     def singing(self):
-        print("la la la la")
+        pass
+
+    @abstractmethod
+    def barbeque(self):
+        pass

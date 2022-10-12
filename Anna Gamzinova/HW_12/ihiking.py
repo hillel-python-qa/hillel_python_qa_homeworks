@@ -1,4 +1,5 @@
-from abc import abstractmethod, ABC
+# abstraction
+from abc import abstractmethod
 
 
 class IHiking:
@@ -7,13 +8,5 @@ class IHiking:
         pass
 
     @abstractmethod
-    def hike_up(self):
-        pass
-
-    @abstractmethod
     def take_picture(self):
-        print("Say Cheeese!")
-
-    @abstractmethod
-    def lunch_break(self):
         pass
