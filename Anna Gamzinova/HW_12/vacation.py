@@ -109,7 +109,7 @@ class Vacation(ICamping, IHiking, ABC):
     def hike(self, x: float, y: float):
         self.__x += x
         self.__y += y
-        print(f"We are hiiking!Our coordinates are {x} and {y})")
+        print(f"We are hiiking! Our coordinates are {x} and {y})")
 
     # polymorphism
     def take_picture(self):

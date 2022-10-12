@@ -22,3 +22,4 @@ class ICamping:
     @abstractmethod
     def barbeque(self):
         pass
+

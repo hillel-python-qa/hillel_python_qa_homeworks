@@ -10,3 +10,4 @@ class IHiking:
     @abstractmethod
     def take_picture(self):
         pass
+
