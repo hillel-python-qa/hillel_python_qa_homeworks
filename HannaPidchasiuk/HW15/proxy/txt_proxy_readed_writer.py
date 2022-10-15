@@ -2,7 +2,7 @@ from HannaPidchasiuk.HW15.proxy.txt_reader import TxtReader
 
 
 class TxtProxyWriterReader:
-    def __init__(self, file_path):
+    def __init__(self, file_path: str):
         self.__result = ''
         self.__is_actual = False
         self.__txt_reader = TxtReader(file_path)
