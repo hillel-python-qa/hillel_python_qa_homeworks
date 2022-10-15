@@ -7,11 +7,11 @@ class TxtReader(Reader):
         self.__file_path = file_path
 
     @property
-    def __file_path(self):
+    def file_path(self):
         return self.__file_path
 
-    @__file_path.setter
-    def __file_path(self, value: str):
+    @file_path.setter
+    def file_path(self, value: str):
         if value:
             self.__file_path = value
         else:

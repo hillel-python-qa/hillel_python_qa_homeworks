@@ -18,6 +18,9 @@ class TxtWriter(Writer):
             raise ValueError("File path cannot be empty!")
 
     def write(self, new_data):
-        with open(self.__file_path) as file:
-            text = file.write(new_data)
+        if new_data:
+            with open(self.__file_path, "w") as file:
+                text = file.write(new_data)
+        else:
+            print("Nothing to write!")
         return text
