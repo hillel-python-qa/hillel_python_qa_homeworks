@@ -8,16 +8,16 @@ class FromTxtToHtmlAdapter:
             headers = rows[0].replace('\n', '').split(',')
             data = [row.replace('\n', '').split(',') for row in rows[1:]]
             result = []
-            for y in range(0, len(data)):
-                i = 0
-                while i < len(headers):
-                    if i == 0:
-                        result.append('<user_data>\n')
-                    result.append(f'\t<{headers[i]}>{data[y][i]}</{headers[i]}>\n')
-                    if i == len(headers) - 1:
-                        result.append('</user_data>\n')
-                    i += 1
-                y += 1
+            for column in range(0, len(data)):
+                index = 0
+                while index < len(headers):
+                    if index == 0:
+                        result.append('<user_data>')
+                    result.append(f'<{headers[index]}>{data[column][index]}</{headers[index]}>')
+                    if index == len(headers) - 1:
+                        result.append('</user_data>')
+                    index += 1
+                column += 1
             html = '\n'.join(result)
             return html
 
