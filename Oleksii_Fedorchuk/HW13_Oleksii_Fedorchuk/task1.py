@@ -1,12 +1,4 @@
-class Animal:
-    def __init__(self, name):
-        print(f"Animal type is a {name}")
-
-
-class Mammal(Animal):
-    def __init__(self):
-        super().__init__("Mammal")
-        print(f"Mammal is a warmblooded")
+from Project_Git.hillel_python_qa_homeworks.Oleksii_Fedorchuk.HW13_Oleksii_Fedorchuk.mammal import Mammal
 
 
 class Water(Mammal):
