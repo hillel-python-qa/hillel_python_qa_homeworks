@@ -8,8 +8,6 @@ class CustomIterator:
         return self
 
     def __next__(self):
-        if self.__start_index == 0:
-            raise IndexError("The start index should be more then 0!")
         if self.__start_index > self.__end_index:
             raise IndexError("Start index cannot be more then End index")
         if self.__end_index > len(self.__sequence):
