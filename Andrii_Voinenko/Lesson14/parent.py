@@ -9,7 +9,7 @@ class Parent(ABC):
         self._age = age
 
         if self._age < 18:
-            raise TypeError('Available only for 18+')
+            raise ValueError('Available only for 18+')
 
     def growing_up(self):
         self._age += 1
