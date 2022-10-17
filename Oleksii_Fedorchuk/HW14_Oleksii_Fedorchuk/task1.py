@@ -55,6 +55,8 @@ class ClassOfSport(Classes):
         return self.__subject
 
     def class_info(self):
+        """ Polymorphism """
+
         return print(f"This is class of {self.__subject}, number of the classroom is {self.number_of_class()}, "
                      f"and you can find it on the {self.flor_in_the_school()} flor\n")
 
