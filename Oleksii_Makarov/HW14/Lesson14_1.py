@@ -154,6 +154,95 @@ class Baby(Human):
         # Inheritance
         super().__init__(first_name, second_name, age, gender)
 
+    @property
+    def first_name(self):
+        # encapsulation
+        """
+            Returns value of first_name
+        """
+        return self._first_name
+
+    @first_name.setter
+    def first_name(self, new_name):
+        # encapsulation
+        """
+            Set's first_name value to new if new value is a filled string.
+        """
+        if re.search(r'\S', new_name):
+            self._first_name = new_name
+        else:
+            raise ValueError("Name must be filled")
+
+    @first_name.deleter
+    def first_name(self):
+        # encapsulation
+        """
+            Sets first_name value to none
+        """
+        self._first_name = None
+
+    @property
+    def second_name(self):
+        # encapsulation
+        """
+            Returns value of second_name
+        """
+        return self._second_name
+
+    @second_name.setter
+    def second_name(self, new_name):
+        # encapsulation
+        """
+            Set's second_name value to new if new value is a filled string.
+        """
+        if re.search(r'\S', new_name):
+            self._second_name = new_name
+        else:
+            raise ValueError("Name must be filled")
+
+    @second_name.deleter
+    def second_name(self):
+        # encapsulation
+        """
+            Sets second_name value to none
+        """
+        self._second_name = None
+
+    @property
+    def age(self):
+        # encapsulation
+        """
+            Returns value of age
+        """
+        return self._age
+
+    @age.setter
+    def age(self, new_age):
+        # encapsulation
+        """
+            Set's first_name value to new if new value is a positive int.
+        """
+        if type(new_age) is int and new_age >= 0:
+            self._age = new_age
+        else:
+            raise ValueError("Age must be a positive int")
+
+    @property
+    def gender(self):
+        # encapsulation
+        return self._gender
+
+    @gender.setter
+    def gender(self, new_gender):
+        # encapsulation
+        """
+            Sets gender value to new if new value is a filled string.
+        """
+        if re.search(r'\S', new_gender):
+            self._gender = new_gender
+        else:
+            raise ValueError("Gender must be filled")
+
     def ageing(self):
         # Abstraction
         self._age += 1
@@ -167,5 +256,9 @@ class Baby(Human):
 if __name__ == '__main__':
     human = Employee('Aleksey', 'Makarov', 23, 'Male', 'QA')
     human.work()
+    human.ageing()
+    print(human.age)
     baby = Baby('Aleksey', 'Makarov', 4, 'Male')
     baby.work()
+    baby.ageing()
+    print(baby.age)
