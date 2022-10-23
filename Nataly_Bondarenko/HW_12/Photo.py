@@ -13,12 +13,13 @@ class PhotoCenter(IPhoto_shots, IPost_processing):
             raise ValueError("Number of the clients can not be less than 1")
         self.__photo_session_price = 150
         self.__number_of_photos = 200
-        self.__discount = 0, 1
 
+    # encapsulation
     @property
     def number_of_clients(self):
         return self.__number_of_clients
 
+    # encapsulation
     @number_of_clients.setter
     def number_of_clients(self, new_number_of_clients: int):
         if new_number_of_clients < 1:
@@ -30,18 +31,15 @@ class PhotoCenter(IPhoto_shots, IPost_processing):
             print(f'From 2 and more people this is a family photo session. '
                   f'The total price for {self.__number_of_photos} will be {self.__photo_session_price * 2}')
 
-    # encapsulation
     def preparing(self):
         self.meet_customers()
         self.turn_on_the_camera()
 
-    # encapsulation
     def photo_session(self):
         self.make_shots()
         self.turn_off_the_camera()
         self.say_goodbye_to_customers()
 
-    # encapsulation
     def post_processing(self):
         self.sort_photos()
         self.send_photos_to_client()

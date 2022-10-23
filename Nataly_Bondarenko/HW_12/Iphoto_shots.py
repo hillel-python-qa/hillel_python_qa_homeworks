@@ -1,6 +1,7 @@
 from abc import ABC, abstractmethod
 
 
+# abstraction
 class IPhoto_shots(ABC):
 
     @abstractmethod

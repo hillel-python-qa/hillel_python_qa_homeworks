@@ -1,6 +1,7 @@
 from abc import ABC, abstractmethod
 
 
+# abstraction
 class IPost_processing(ABC):
 
     @abstractmethod
