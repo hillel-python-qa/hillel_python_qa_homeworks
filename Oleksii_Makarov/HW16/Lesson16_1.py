@@ -4,18 +4,6 @@ class MyIterator:
         self.__start_value = start_value
         self.__end_value = end_value
 
-    @property
-    def iter_object(self):
-        return self.__iter_object
-
-    @property
-    def start_value(self):
-        return self.__start_value
-
-    @property
-    def end_value(self):
-        return self.__end_value
-
     def __iter__(self):
         return self
 
