@@ -7,7 +7,7 @@ def test_grow_up(create_custom_human_instance):
 
     assert human.age == 20, (f'1 year was not added\n'
                              f'Actual result: {human.grow()}\n'
-                             f'Expected result: 19')
+                             f'Expected result: 20')
 
 
 @pytest.mark.skip(reason='No validation for negative number')
@@ -46,3 +46,12 @@ def test_gender_validation_for_same_gender(create_default_human):
     human = create_default_human
     with pytest.raises(Exception):
         human.change_gender('female')
+
+
+def test_change_gender(create_default_human):
+    human = create_default_human
+    change_gender = human.change_gender('male')
+
+    assert human.gender == 'male', (f'Gender was not changed\n'
+                                    f'Actual result: {change_gender}\n'
+                                    f'Expected result: male')
