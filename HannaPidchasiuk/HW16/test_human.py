@@ -48,7 +48,7 @@ def test_human_status_dead(create_human_custom, faker, age):
                                             f'\nExpected: dead')
     assert human.age == age, (f'Human age is changed, but should not'
                               f'\nActual: {human.age}'
-                              f'\nExpected: age')
+                              f'\nExpected: {age}')
     with pytest.raises(Exception, match=f"{human._Human__name} is already dead..."):
         human._Human__is_alive()
 
@@ -63,3 +63,33 @@ def test_human_age_negative(create_human_custom, faker):
 def test_human_name_empty(create_human_custom):
     with pytest.raises(ValueError):
         create_human_custom("", random.randint(1, 99), "female")
+
+
+@pytest.mark.parametrize("age, gender", [
+    (random.randint(1, 99), "male"),
+    (random.randint(1, 99), "female")
+], ids=["create valid male", "create valid female"])
+def test_create_valid_human(create_human_custom, faker, age, gender):
+    name = faker.name()
+    human = create_human_custom(name, age, gender)
+
+    assert human._Human__name == name, (f'Human name set incorrect'
+                                        f'\nActual: {human._Human__name}'
+                                        f'\nExpected: {name}')
+    assert human.age == age, (f'Human age set incorrect'
+                              f'\nActual: {human.age}'
+                              f'\nExpected: {age}')
+    assert human.gender == gender, (f'Human gender set incorrect'
+                                    f'\nActual: {human.gender}'
+                                    f'\nExpected: {gender}')
+
+
+@pytest.mark.skip(reason="No validation for data types")
+@pytest.mark.parametrize("name, age, gender", [
+    (128937, 12, "male"),
+    ("Name", "12", "female"),
+    ("Name", 23, 3746)
+], ids=["invalid name type", "invalid age type", "invalid gender type"])
+def test_create_inavlid_human_data_types(create_human_custom, name, age, gender):
+    with pytest.raises(Exception):
+        create_human_custom(name, age, gender)
