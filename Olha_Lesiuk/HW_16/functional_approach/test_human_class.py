@@ -1,6 +1,5 @@
 import random
 
-# test if the man is not marked dead if he is below the limit age: less than 100
 import pytest
 
 
@@ -24,7 +23,7 @@ def test_age_below_the_limit(default_human, faker):
     age = random.randint(0, 99)
     human = default_human(faker.name(), age, 'male')
     human.grow()
-    assert human.age == age + 1, (f'A man is dead'
+    assert human.age == age + 1, (f'Age is below the limit'
                                   f'\nActual: {human.age}'
                                   f'\nExpected: {age + 1}')
 
@@ -44,20 +43,23 @@ def test_age_above_the_limit(default_human, faker):
 # test the man is not marked alive if he enters invalid value: with minus
 
 
+@pytest.mark.xfail(reason='The age is not acceptable, the value is invalid')
+@pytest.mark.negative
 def test_invalid_age_value(default_human, faker):
     with pytest.raises(ValueError):
         default_human(faker.name(), -5, 'male')
 
-
 # test if the user enter letters in the age field
 
 
+@pytest.mark.xfail(reason='The age is invalid and field accepts only digits')
+@pytest.mark.negative
 def test_if_enter_letters_in_age(default_human, faker):
     with pytest.raises(ValueError):
         default_human(faker.name(), 'sadsd', 'male')
 
-
 # test if the app accepts valid values: male or female
+
 
 @pytest.mark.parametrize('gender, switch_gender', [('male', 'female'), ('female', 'male')],
                          ids=['male to female', 'female to male'])
@@ -72,7 +74,7 @@ def test_valid_gender(default_human, faker, gender, switch_gender):
 # test if the user try to enter the same gender
 
 
-def test_if_already_have_gender(default_human, faker):
+def test_if_the_name_gender_is_correct(default_human, faker):
     age = random.randint(1, 99)
     human = default_human(faker.name(), age, 'female')
     with pytest.raises(Exception, match="Not correct name of gender"):
@@ -81,14 +83,16 @@ def test_if_already_have_gender(default_human, faker):
 # test if the user doesn't feel in the gender field
 
 
+@pytest.mark.xfail(reason='The age is should not be empty')
+@pytest.mark.negative
 def test_if_dont_feel_gender(default_human, faker):
     with pytest.raises(ValueError):
         default_human(faker.name(), 50, '')
 
-
 # test if the user enter digits in the gender field
 
 
+@pytest.mark.negative
 def test_if_enter_digits_in_gender(default_human, faker):
     with pytest.raises(ValueError):
         default_human(faker.name(), 50, '2193')
