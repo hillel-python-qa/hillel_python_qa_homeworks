@@ -6,7 +6,7 @@ def test_grow_up(create_custom_human_instance):
     human.grow()
 
     assert human.age == 20, (f'1 year was not added\n'
-                             f'Actual result: {human.grow()}\n'
+                             f'Actual result: {human.age}\n'
                              f'Expected result: 20')
 
 
@@ -61,14 +61,14 @@ def test_change_gender(create_default_human):
 def test_gender_property(create_default_human):
     human = create_default_human
 
-    assert human.gender == 'female', (f'New gender value was not set\n'
-                                    f'Actual result: {human.gender}\n'
-                                    f'Expected result: male')
+    assert human.gender == 'female', (f'Wrong gender value\n'
+                                      f'Actual result: {human.gender}\n'
+                                      f'Expected result: male')
 
 
 def test_age_property(create_default_human):
     human = create_default_human
 
-    assert human.age == 55, (f'New age value was not set\n'
+    assert human.age == 55, (f'Wrong age value\n'
                              f'Actual result: {human.age}\n'
-                             f'Expected result: 15')
+                             f'Expected result: 55')
