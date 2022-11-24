@@ -1,8 +1,14 @@
-def is_prime(number: [2, 1000]):
-    if 2 <= number <= 9:
-        return True
-    else:
-        return False
+from math import sqrt
 
 
-print(is_prime(767))
+def is_prime(number: int):
+    for i in range(2, int(sqrt(number)) + 1):
+        if (number % i) == 0:
+            return True
+        elif 2 <= number >= 1000:
+            return None
+        else:
+            return False
+
+
+print(is_prime(11))
