@@ -1,3 +1,6 @@
+if __name__ == '__main__':
+    pass
+
 def arifmetic_function(number1: int, number2: int, operations: list) -> int:
     for operation in operations:
         if operation: "+"
@@ -9,5 +12,3 @@ def arifmetic_function(number1: int, number2: int, operations: list) -> int:
     else: result = number1 / number2
     return result
 arifmetic_function(5,6,("+", "-", "*", "/"))
-if __name__ == '__main__':
-    pass
